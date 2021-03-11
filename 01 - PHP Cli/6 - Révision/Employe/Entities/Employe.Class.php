@@ -10,6 +10,7 @@ class Employe
     private $_fonction;
     private $_salaire;
     private $_service;
+    private static $_compteur = 0;
 
     /*****************Accesseurs***************** */
 
@@ -72,6 +73,10 @@ class Employe
     {
         $this->_service = $service;
     }
+    public static function getCompteur()
+    {
+        return self::$_compteur;
+    }
 
     /*****************Constructeur***************** */
 
@@ -81,6 +86,7 @@ class Employe
         {
             $this->hydrate($options);
         }
+        self::$_compteur++;
     }
     public function hydrate($data)
     {
@@ -103,8 +109,10 @@ class Employe
      */
     public function toString()
     {
-        return $this->getNom() ." ".$this->getPrenom()." recoit une prime : ".$this->prime()."k€" ;
-       
+        $aff = "\n\n*** SALARIE ***\n";
+        $aff .= "Nom :" . $this->getNom() . "\nPrenom :" . $this->getPrenom() . "\nDateEmbauche :" . $this->getDateEmbauche()->format('Y-m-d') . "\nPosteEntreprise :" . $this->getFonction() . "\nSalaire annuel :" . $this->getSalaire() . "K€\nService :" . $this->getService() . "\n";
+        $aff .= "Il reçoit une prime de " . $this->prime() . "K€\n";
+        return $aff;
     }
 
     /**
@@ -129,7 +137,42 @@ class Employe
      */
     public static function compareTo($obj1, $obj2)
     {
-        return 0;
+        if ($obj1->getNom() > $obj2->getNom())
+        {
+            return 1;
+        }
+        else if ($obj1->getNom() < $obj2->getNom())
+        {
+            return -1;
+        }
+        else if ($obj1->getPrenom() > $obj2->getPrenom())
+        {
+            return 1;
+        }
+        else if ($obj1->getPrenom() < $obj2->getPrenom())
+        {
+            return -1;
+        }
+        else
+        {
+            return 0;
+        }
+    }
+
+    public static function compareToService($obj1, $obj2)
+    {
+        if ($obj1->getService() > $obj2->getService())
+        {
+            return 1;
+        }
+        else if ($obj1->getService() < $obj2->getService())
+        {
+            return -1;
+        }
+        else
+        { // si les services sont les mêmes, on rappele la fonction de tri par Nom Prenom
+            return self::compareTo($obj1, $obj2);
+        }
     }
 
 /**
@@ -175,4 +218,5 @@ class Employe
     {
         return $this->getSalaire() * 0.02 * $this->anciennete();
     }
+
 }
