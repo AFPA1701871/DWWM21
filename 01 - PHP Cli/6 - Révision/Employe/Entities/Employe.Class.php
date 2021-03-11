@@ -11,6 +11,7 @@ class Employe
     private $_salaire;
     private $_service;
     private static $_compteur = 0;
+    private $_agence;
 
     /*****************Accesseurs***************** */
 
@@ -77,7 +78,15 @@ class Employe
     {
         return self::$_compteur;
     }
-
+    public function getAgence()
+    {
+        return $this->_agence;
+    }
+    /* on force le paramètre $agence a être de type Agence*/
+    public function setAgence(Agence $agence)
+    {
+        $this->_agence = $agence;
+    }
     /*****************Constructeur***************** */
 
     public function __construct(array $options = [])
@@ -112,6 +121,7 @@ class Employe
         $aff = "\n\n*** SALARIE ***\n";
         $aff .= "Nom :" . $this->getNom() . "\nPrenom :" . $this->getPrenom() . "\nDateEmbauche :" . $this->getDateEmbauche()->format('Y-m-d') . "\nPosteEntreprise :" . $this->getFonction() . "\nSalaire annuel :" . $this->getSalaire() . "K€\nService :" . $this->getService() . "\n";
         $aff .= "Il reçoit une prime de " . $this->prime() . "K€\n";
+        $aff .=  "Il travaille dans l'agence : ".$this->getAgence()->toString()."\n";
         return $aff;
     }
 
@@ -157,6 +167,22 @@ class Employe
         {
             return 0;
         }
+    }
+    /* comparaison avec concaténation*/
+    public static function compareTo2($obj1, $obj2)
+    {
+        $obja = $obj1->getNom() . $obj1->getPrenom();
+        $objb = $obj2->getNom() . $obj2->getPrenom();
+        if ($obja > $objb)
+        {
+            return 1;
+        }
+        if ($obja < $objb)
+        {
+            return -1;
+        }
+        return 0;
+
     }
 
     public static function compareToService($obj1, $obj2)
@@ -210,7 +236,7 @@ class Employe
         return $this->getSalaire() * 0.05;
     }
 /**
- * prime de 2% du salaire par anne d'ancienneté
+ * prime de 2% du salaire par annee d'ancienneté
  *
  * @return int montant de la prime
  */
@@ -219,4 +245,15 @@ class Employe
         return $this->getSalaire() * 0.02 * $this->anciennete();
     }
 
+/**
+ * Calcul de la masse salariale de l'employe
+ *
+ * @return float salaire + prime
+ */
+    public function masseSalariale()
+    {
+        return $this->getSalaire() + $this->prime();
+    }
+
+  
 }
