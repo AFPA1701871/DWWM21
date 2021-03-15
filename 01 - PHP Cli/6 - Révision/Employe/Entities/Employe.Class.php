@@ -12,6 +12,7 @@ class Employe
     private $_service;
     private static $_compteur = 0;
     private $_agence;
+    private $_listeEnfants = [];
 
     /*****************Accesseurs***************** */
 
@@ -87,6 +88,16 @@ class Employe
     {
         $this->_agence = $agence;
     }
+
+    public function getListeEnfants()
+    {
+        return $this->_listeEnfants;
+    }
+
+    public function setListeEnfants(array $listeEnfants)
+    {
+        $this->_listeEnfants = $listeEnfants;
+    }
     /*****************Constructeur***************** */
 
     public function __construct(array $options = [])
@@ -120,8 +131,29 @@ class Employe
     {
         $aff = "\n\n*** SALARIE ***\n";
         $aff .= "Nom :" . $this->getNom() . "\nPrenom :" . $this->getPrenom() . "\nDateEmbauche :" . $this->getDateEmbauche()->format('Y-m-d') . "\nPosteEntreprise :" . $this->getFonction() . "\nSalaire annuel :" . $this->getSalaire() . "K€\nService :" . $this->getService() . "\n";
+
         $aff .= "Il reçoit une prime de " . $this->prime() . "K€\n";
-        $aff .=  "Il travaille dans l'agence : ".$this->getAgence()->toString()."\n";
+        // if ($this->recoitChequeVacances())
+        // {
+        //     $aff .= "Il est éligible aux chèques vacances \n";
+        // }
+        $aff .= ($this->recoitChequeVacances()) ? "Il est éligible aux chèques vacances \n" : "";
+        $aff .= "Il travaille dans l'agence : " . $this->getAgence()->toString() . "\n";
+        switch (count($this->getListeEnfants()))
+        {
+            case '0':break;
+            case '1':$aff .= "Son enfant est : \n";
+                $aff .= $this->getListeEnfants()[0]->toString();
+                break;
+
+            default:
+                $aff .= "Ses enfants sont : \n";
+                foreach ($this->getListeEnfants() as $enf)
+                {
+                    $aff .= $enf->toString();
+                }
+                break;
+        }
         return $aff;
     }
 
@@ -143,7 +175,7 @@ class Employe
      *
      * @param [type] $obj1
      * @param [type] $obj2
-     * @return void
+     * @return int
      */
     public static function compareTo($obj1, $obj2)
     {
@@ -255,5 +287,24 @@ class Employe
         return $this->getSalaire() + $this->prime();
     }
 
-  
+    /**
+     *
+     * verifie si l'employé est eligible aux cheques vacances
+     *
+     * @return string true ou false selon si l'employé est eligible ou pas
+     */
+    public function recoitChequeVacances()
+    {
+        // if ($this->anciennete() >= 1)
+        // {
+        //     return true;
+        // }
+        // else
+        // {
+        //     return false;
+        // }
+
+        return ($this->anciennete() >= 1); // on verifie par rapport a l'anciennete si l employé est dans l'entreprise depuis plus d'un an
+    }
+
 }

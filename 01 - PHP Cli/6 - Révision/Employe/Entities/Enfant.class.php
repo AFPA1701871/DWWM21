@@ -1,66 +1,44 @@
 <?php
-class Agence
+class Enfant
 {
 
     /*****************Attributs***************** */
-    private $_nomAgence;
-    private $_adresse;
-    private $_codePostal;
-    private $_ville;
-    private $_modeRestauration;
-    
+    private $_nomEnfant;
+    private $_prenomEnfant;
+    private $_dateNaissance;
 
     /*****************Accesseurs***************** */
 
-    public function getNomAgence()
+    public function getNomEnfant()
     {
-        return $this->_nomAgence;
+        return $this->_nomEnfant;
     }
 
-    public function setNomAgence($nomAgence)
+    public function setNomEnfant($nomEnfant)
     {
-        $this->_nomAgence = $nomAgence;
+        $this->_nomEnfant = $nomEnfant;
     }
 
-    public function getAdresse()
+    public function getPrenomEnfant()
     {
-        return $this->_adresse;
+        return $this->_prenomEnfant;
     }
 
-    public function setAdresse($adresse)
+    public function setPrenomEnfant($prenomEnfant)
     {
-        $this->_adresse = $adresse;
+        $this->_prenomEnfant = $prenomEnfant;
     }
 
-    public function getCodePostal()
+    public function getDateNaissance()
     {
-        return $this->_codePostal;
+        return $this->_dateNaissance;
     }
 
-    public function setCodePostal($codePostal)
+    public function setDateNaissance(DateTime $dateNaissance)
     {
-        $this->_codePostal = $codePostal;
+        $this->_dateNaissance = $dateNaissance;
     }
 
-    public function getVille()
-    {
-        return $this->_ville;
-    }
-
-    public function setVille($ville)
-    {
-        $this->_ville = $ville;
-    }
-    
-    public function getModeRestauration()
-    {
-        return $this->_modeRestauration;
-    }
-
-    public function setModeRestauration($modeRestauration)
-    {
-        $this->_modeRestauration = $modeRestauration;
-    }
     /*****************Constructeur***************** */
 
     public function __construct(array $options = [])
@@ -83,7 +61,7 @@ class Agence
     }
 
     /*****************Autres Méthodes***************** */
-    
+
     /**
      * Transforme l'objet en chaine de caractères
      *
@@ -91,8 +69,7 @@ class Agence
      */
     public function toString()
     {
-        return "\n\tNom :" . $this->getNomAgence() . "\n\tAdresse :" . $this->getAdresse()."\n\tCode postal : " . $this->getCodePostal()."\n\tVille : " . $this->getVille(). "\n\tRestauration :" . $this->getModeRestauration();
-
+        return "\n\t Nom de l'enfant : " . $this->getNomEnfant() . "\n\t prénom : " . $this->getPrenomEnfant() . "\n\t Date de Naissance  : " . $this->getDateNaissance()->format("d-m-Y") . "\n\t age : " . $this->age();
     }
 
     /**
@@ -119,6 +96,23 @@ class Agence
     {
         return 0;
     }
-
-
+    /**
+     * retourne l'age de l'enfant
+     *
+     * @return int age en année
+     */
+    public function age()
+    {
+        $age = date_diff(new DateTime("NOW"), $this->getDateNaissance());
+        return $age->format("%y");
+    }
+/**
+ * renvoi la valeur du cheque noel lié à l'enfant
+ *
+ * @return int
+ */
+     public function chequeNoel()
+       {
+        $   
+       }
 }
