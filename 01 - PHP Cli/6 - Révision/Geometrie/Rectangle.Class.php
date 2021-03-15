@@ -83,7 +83,7 @@ class Rectangle
     /**
      * renvoi vrai si le rectangle est un carré
      *
-     * @return void
+     * @return bool
      */
     public function estCarre()
     {

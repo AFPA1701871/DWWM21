@@ -19,7 +19,7 @@ function afficheTableau($tab)
 }
 
 
-$enf= new Enfant(["nomEnfant"=>"DUPONT", "prenomEnfant"=>"toto","dateNaissance"=>new DateTime("2019-01-02")]);
+$enf= new Enfant(["nomEnfant"=>"DUPONT", "prenomEnfant"=>"toto","dateNaissance"=>new DateTime("2006-01-02")]);
 echo $enf->toString();
 $enf1= new Enfant(["nomEnfant"=>"Austin", "prenomEnfant"=>"test","dateNaissance"=>new DateTime("2015-01-02")]);
 echo $enf->toString();

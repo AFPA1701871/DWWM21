@@ -113,7 +113,7 @@ class Enfant
  */
     public function chequeNoel()
     {
-        $ageEnfant = $this->getAge();
+        $ageEnfant = $this->age();
         if ( $ageEnfant < 0 || $ageEnfant>18 )
         {
             return 0;

@@ -154,6 +154,7 @@ class Employe
                 }
                 break;
         }
+        $aff .= $this->chequeNoel();
         return $aff;
     }
 
@@ -309,28 +310,30 @@ class Employe
 
     public function chequeNoel()
     {
-        $listeCheque = ["0"=>0, "20"=>0,"30"=>0,"50"=>0]; // tableau qui va contenir le nombre de cheque par montant
-        if (count($this->getListeEnfants())>0)
+        $listeCheque = ["0" => 0, "20" => 0, "30" => 0, "50" => 0]; // tableau qui va contenir le nombre de cheque par montant
+        if (count($this->getListeEnfants()) > 0)
         {
-            foreach ($this->getListeEnfants() as $enf) {
+            foreach ($this->getListeEnfants() as $enf)
+            {
                 $valeurCheque = $enf->chequeNoel(); // valeur du cheque pour l'enfant
                 $listeCheque[$valeurCheque]++; // on augmente le nombre de cheque de cette valeur
             }
         }
-        $listeCheque[0]=0;  // pour eviter de demander des cheques de 0
-        $nbCheque  = array_sum($listeCheque);  // nb de cheque a editer
-        if( $nbCheque>0)
+        $listeCheque[0] = 0; // pour eviter de demander des cheques de 0
+        $nbCheque = array_sum($listeCheque); // nb de cheque a editer
+        if ($nbCheque > 0)
         {
-            $aff = "Il a droit à des chèques de Noel réparti comme suit : \n";
-            foreach ($listeCheque as $key => $value) {
-                if ($value>0)
-                $aff .= "\t ".$value." chèque(s) de " .$key."\n";
+            $aff = "\nIl a droit à des chèques de Noel réparti comme suit : \n";
+            foreach ($listeCheque as $key => $value)
+            {
+                $aff .= ($value > 0) ? "\t " . $value . " chèque(s) de " . $key . "\n" : "";
             }
         }
-        else{
-            $aff = "Il n'a pas le droit à des chèques de Noel \n";
+        else
+        {
+            $aff = "\nIl n'a pas le droit à des chèques de Noel \n";
 
         }
-        
+        return $aff;
     }
 }
