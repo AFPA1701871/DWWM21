@@ -307,4 +307,30 @@ class Employe
         return ($this->anciennete() >= 1); // on verifie par rapport a l'anciennete si l employé est dans l'entreprise depuis plus d'un an
     }
 
+    public function chequeNoel()
+    {
+        $listeCheque = ["0"=>0, "20"=>0,"30"=>0,"50"=>0]; // tableau qui va contenir le nombre de cheque par montant
+        if (count($this->getListeEnfants())>0)
+        {
+            foreach ($this->getListeEnfants() as $enf) {
+                $valeurCheque = $enf->chequeNoel(); // valeur du cheque pour l'enfant
+                $listeCheque[$valeurCheque]++; // on augmente le nombre de cheque de cette valeur
+            }
+        }
+        $listeCheque[0]=0;  // pour eviter de demander des cheques de 0
+        $nbCheque  = array_sum($listeCheque);  // nb de cheque a editer
+        if( $nbCheque>0)
+        {
+            $aff = "Il a droit à des chèques de Noel réparti comme suit : \n";
+            foreach ($listeCheque as $key => $value) {
+                if ($value>0)
+                $aff .= "\t ".$value." chèque(s) de " .$key."\n";
+            }
+        }
+        else{
+            $aff = "Il n'a pas le droit à des chèques de Noel \n";
+
+        }
+        
+    }
 }

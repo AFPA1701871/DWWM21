@@ -109,10 +109,24 @@ class Enfant
 /**
  * renvoi la valeur du cheque noel lié à l'enfant
  *
- * @return int
+ * @return int  valeur du cheque Noel , 0 sinon
  */
-     public function chequeNoel()
-       {
-        $   
-       }
+    public function chequeNoel()
+    {
+        $ageEnfant = $this->getAge();
+        if ( $ageEnfant < 0 || $ageEnfant>18 )
+        {
+            return 0;
+        }
+        else if ($ageEnfant<11)
+        {
+            return 20;
+        }
+        else if ($ageEnfant<16)
+        {
+            return 30;
+        }
+        return 50;
+        
+    }
 }
