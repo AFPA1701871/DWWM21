@@ -32,3 +32,9 @@ CREATE TABLE toto.test (
     `libelletest` VARCHAR(50) NULL,
     PRIMARY KEY (`idtest`)
 ) ENGINE = InnoDB;
+
+CREATE TABLE `toto`.`marque` (
+    `idMarque` INT NOT NULL AUTO_INCREMENT,
+    `libelleMarque` VARCHAR(50) NOT NULL,
+    PRIMARY KEY (`idMarque`)
+) ENGINE = InnoDB CHARSET = utf8 COLLATE utf8_general_ci;
