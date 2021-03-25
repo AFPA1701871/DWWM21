@@ -12,6 +12,7 @@ SELECT max(`cde_total`) FROM `commandes`;
 SELECT MAX(`quantiteCommande`*articles.prixArticle) FROM `commandes` INNER JOIN articles ON commandes.idArticle = articles.idArticle;
 B) Afficher le montant moyen des commandes.
 SELECT ROUND(AVG(`cde_total`),2) FROM `commandes`;
+SELECT ROUND(AVG( quantiteCommande * prixArticle ),2) as "montant moyen commande " FROM `commandes` INNER JOIN articles ON commandes.idArticle = articles.idArticle;
 C) Afficher le montant le plus bas de commande.
 SELECT MIN(`cde_total`) FROM `commandes`;
 D) Afficher le nombre de commandes qui ont été passées.
