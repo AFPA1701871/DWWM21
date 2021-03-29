@@ -1,4 +1,5 @@
-create database gestion_conversions;
+drop database if exists gestion_conversions;
+create database if not exists gestion_conversions;
 use gestion_conversions;
 
 --
