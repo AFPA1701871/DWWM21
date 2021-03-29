@@ -55,7 +55,15 @@ UPDATE avoir_note
     AND avoir_note.idEtudiant = (
         SELECT etudiants.idEtudiant
         FROM etudiants
-        WHERE etudiants.nomEtudiant="MARKE")
+        WHERE etudiants.nomEtudiant="MARKE");
+UPDATE avoir_note
+INNER Join etudiants ON avoir_note.idEtudiant = etudiants.idEtudiant
+INNER JOIN epreuves ON avoir_note.idEpreuve = epreuves.idEpreuve
+INNER JOIN matieres ON epreuves.idMatiereEpreuve = matieres.idMatiere
+Set note = note -3
+Where  nomEtudiant = "Marke"
+AND nomMatiere = "BD"
+);
 O) DEWA a manqué l''épreuve 4. Vu son niveau, on décide de lui créer une entrée dans AVOIR_NOTE en lui
 attribuant la moyenne des notes obtenues à cette épreuve par ses collègues*0.9. Attention, la requête doit
 intégrer le nom de l''étudiant (et non chercher à repérer le numéro avant de la taper.)
