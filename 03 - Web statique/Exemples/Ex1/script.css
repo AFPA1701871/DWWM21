@@ -1,0 +1,37 @@
+html,body, header, footer, div, nav, section, main{
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex: 1;
+    border:  solid black 1px;
+}
+img{
+    width: 100%;
+}
+
+.colonne{
+    flex-direction: column;
+}
+body{
+    background-color:red;
+}
+header,footer{
+    background-color: green;
+}
+main{
+    background-color: blue;
+    height: 80vh;
+}
+.titre{
+    flex: 2;
+}
+.demi{
+    flex: 0.2;
+}
+.espaceHor{
+    flex: none;
+    height: 2vh;
+}
+section {
+    flex: 3;
+}
