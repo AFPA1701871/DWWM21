@@ -1,0 +1,7 @@
+.art{
+    background-color: blue;
+}
+ .art:first-child
+{
+    background-color: green;
+}
