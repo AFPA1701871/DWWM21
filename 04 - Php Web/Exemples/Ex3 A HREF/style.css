@@ -1,0 +1,14 @@
+div , header{
+    display: flex;
+
+}
+
+.espace {
+    height: 75vh;
+}
+.corps{
+    flex-direction: column;
+}
+html{
+    scroll-behavior: smooth; /* permet une descente progressive*/
+}
