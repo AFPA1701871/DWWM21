@@ -1,0 +1,18 @@
+div{
+    display: flex;
+    flex: 1;
+}
+.colonne{
+    flex-direction: column;
+}
+.personne{
+    border: 2px solid black;
+    border-radius: 0.5em;
+    padding: 2em;
+}
+.age{
+    background-color: blue;
+}
+.cache{
+    display: none;
+}
