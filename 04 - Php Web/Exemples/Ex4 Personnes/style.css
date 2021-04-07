@@ -1,4 +1,4 @@
-div{
+div,a{
     display: flex;
     flex: 1;
 }
