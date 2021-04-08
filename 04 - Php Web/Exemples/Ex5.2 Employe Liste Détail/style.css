@@ -1,0 +1,9 @@
+section,div{
+    display: flex;
+    flex: 1;
+    justify-content: center;
+    border: 1px solid black;
+}
+.colonne{
+    flex-direction: column;
+}
