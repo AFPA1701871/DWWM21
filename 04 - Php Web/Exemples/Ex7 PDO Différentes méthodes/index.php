@@ -1,5 +1,5 @@
 <?php
-include "personne.Class.php";
+include "Personnes.Class.php";
 /********************************************/
 /*****  CONNECTION A LA BASE DE DONNEES *****/
 /********************************************/
@@ -33,7 +33,7 @@ echo "on est connecté à la base de données";
 $requete = $db->query("SELECT idPersonne, nom, prenom, age FROM personnes where idPersonne=1"); // $requete est un objet de type PDO_Statement
 $reponse = $requete->fetch(PDO::FETCH_ASSOC);
 var_dump($reponse);
-$pers = new Personne($reponse);
+$pers = new Personnes($reponse);
 var_dump($pers);
 $pers->affichage();
 
@@ -48,7 +48,7 @@ while ($donnees = $requete->fetch(PDO::FETCH_ASSOC)) // le while permet de boucl
 // il s'arrete quand fetch renvoi false
 {
     var_dump($donnees);
-    $personnes[] = new Personne($donnees);
+    $personnes[] = new Personnes($donnees);
 }
 var_dump($personnes);
 
@@ -65,7 +65,7 @@ var_dump($q);
 /********************************************/
 
 //on crée un objet
-$perso = new Personne(["nom"=>"Dupond","prenom"=>"toto","age"=>21]);
+$perso = new Personnes(["nom"=>"Dupond","prenom"=>"toto","age"=>21]);
 
 //on prepare la requete
 // :nom est une variable SQL
@@ -85,7 +85,7 @@ var_dump($reponse);
 /********************************************/
 
 //on crée un objet
-$perso = new Personne(["nom"=>"Dupond","prenom"=>"toto","age"=>21]);
+$perso = new Personnes(["nom"=>"Dupond","prenom"=>"toto","age"=>21]);
 
 //on prepare la requete
 // :nom est une variable SQL
