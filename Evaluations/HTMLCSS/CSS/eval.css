@@ -1,0 +1,124 @@
+html,
+body,
+div {
+    display: flex;
+    flex: 1;
+    justify-content: center;
+}
+img{
+    width: 100%;
+}
+body {
+    background-color: #F7EFDF;
+    width: 80%;
+    flex: none;
+    flex-direction: column;
+}
+
+h1 {
+    text-align: center;
+}
+
+h2,
+h3,
+ul,p {
+    margin-top: 0;
+}
+
+.intro1 {
+    flex: 3;
+    padding: 2%;
+}
+
+.intro2 {
+    flex: 2;
+    flex-direction: column;
+    padding: 0.8em;
+    border: 1px solid black;
+    border-radius: 15px;
+}
+
+.intro2 p {
+    margin: 0;
+}
+
+strong {
+    font-weight: bolder;
+    color: #000066;
+}
+
+.periodeContenu {
+    flex-direction: column;
+}
+
+p {
+    font-size: 1.2em;
+    text-align: justify;
+}
+
+ul {
+    font-size: 18px;
+    color: #006633;
+    list-style-type: circle;
+    list-style-position: outside;
+    padding-left: 30px;
+}
+
+li {
+    margin-top: 0.7em;
+}
+
+.titre-image {
+    font-size: 12px;
+    font-weight: bold;
+    text-transform: uppercase;
+    text-align: center;
+}
+
+.image-droite,
+.image-gauche {
+    margin: 0px 2vh;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 10px;
+    border: thin solid #BB8C00;
+    background-color: #F1E3C7;
+    flex-direction: column;
+}
+
+.block {
+    display: block;
+}
+
+.image-gauche {
+    float: left;
+    width: 20vw;
+}
+
+.image-droite {
+    float: right;
+    width: 10vw;
+}
+
+.copyright-image {
+    padding: 2px;
+    text-align: center;
+}
+
+@media screen and (max-width:800px) {
+    .intro,.premierePeriode {
+        flex-direction: column;
+    }
+    body {
+        width: 95%;
+    }
+    .image-droite, .image-gauche{
+        float: unset;
+        width: unset;
+    }
+    h3{
+        padding-top: 1.2em;
+    }
+    h2{
+        padding-bottom: 1.2em;
+    }
+}
