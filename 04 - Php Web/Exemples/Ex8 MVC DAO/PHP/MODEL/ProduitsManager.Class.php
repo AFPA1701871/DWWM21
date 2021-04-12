@@ -48,7 +48,7 @@ class ProduitsManager
     {
         $db = DbConnect::getDb();
         $liste = [];
-        $q = $db->query("SELECT * FROM Produits");
+        $q = $db->query("SELECT * FROM Produits order by LibelleProduit");
         while ($donnees = $q->fetch(PDO::FETCH_ASSOC))
         {
             if ($donnees != false)
