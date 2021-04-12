@@ -1,0 +1,1 @@
+<h1><?= $_GET["page"] ?> n'est pas une page valide</h1>
