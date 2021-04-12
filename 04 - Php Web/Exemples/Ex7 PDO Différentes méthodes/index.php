@@ -65,7 +65,7 @@ var_dump($q);
 /********************************************/
 
 //on crée un objet
-$perso = new Personnes(["nom"=>"Dupond","prenom"=>"toto","age"=>21]);
+$perso = new Personnes(["nom"=>"TOTO","prenom"=>"toto","age"=>21]);
 
 //on prepare la requete
 // :nom est une variable SQL
@@ -87,11 +87,8 @@ var_dump($reponse);
 //on crée un objet
 $perso = new Personnes(["nom"=>"Dupond","prenom"=>"toto","age"=>21]);
 
-//on prepare la requete
-// :nom est une variable SQL
-$q = $db->prepare('INSERT INTO personnes(nom, prenom, age) VALUES("'.$perso->getNom().'","'.$perso->getPrenom().'",'.$perso->getAge().')');
+//on execute la requete
+$q = $db->exec('INSERT INTO personnes(nom, prenom, age) VALUES("'.$perso->getNom().'","'.$perso->getPrenom().'",'.$perso->getAge().')');
 
-// Ex�cution de la requ�te.
-$reponse = $q->execute();
-var_dump($reponse);
+var_dump($q);
 
