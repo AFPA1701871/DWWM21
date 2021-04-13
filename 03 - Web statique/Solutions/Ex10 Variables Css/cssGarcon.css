@@ -1,0 +1,5 @@
+:root{
+    --couleur1: #1c1fd3;
+    --couleur2:#127544;
+    --degrade: linear-gradient(var(--couleur1) 10%,#a4efa4 50%, var(--couleur2) 75%);
+}

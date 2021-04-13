@@ -1,0 +1,36 @@
+
+
+body,header, footer,div,article{
+    display: flex;
+    flex: 1;
+}
+
+.colonne
+{
+    flex-direction: column;
+}
+img, video{
+    width: 100%;
+}
+
+article{
+    background-color: var(--couleur1);
+}
+.titre{
+    background-color:  var(--couleur1);
+    font-size: 1.5em;
+}
+body{
+    background: var(--degrade);
+}
+footer{
+    background-color:var(--couleur2)
+}
+.page{
+    flex: none;
+    width: 80vw;
+}
+.encadre{
+    border: black 2px solid;
+    border-radius: 0.5em;
+}
