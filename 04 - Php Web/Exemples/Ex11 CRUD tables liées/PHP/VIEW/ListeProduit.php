@@ -20,7 +20,7 @@ $liste = ProduitsManager::getList();
                 <a class=" crudBtn crudBtnModif"
                     href='index.php?codePage=formProduit&mode=modif&id=<?php echo $elt->getIdProduit(); ?>'>Modifier</a>
                 <a class=" crudBtn crudBtnSuppr"
-                    href='index.php?codePage=formProduit&mode=delete&id=<?php echo $elt->getIdProduit(); ?>'>Supprimer</a></td>
+                    href='index.php?codePage=formProduit&mode=del&id=<?php echo $elt->getIdProduit(); ?>'>Supprimer</a></td>
             </tr>
             <?php }?>
 

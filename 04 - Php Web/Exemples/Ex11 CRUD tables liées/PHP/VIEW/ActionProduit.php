@@ -3,18 +3,18 @@ var_dump($_POST);
 $p = new Produits($_POST);
 var_dump($p);
 switch ($_GET['mode']) {
-    case "ajoutProduit":
+    case "ajout":
         {
             ProduitsManager::add($p);
             break;
         }
-    case "modifProduit":
+    case "modif":
         {
             
             ProduitsManager::update($p);
             break;
         }
-    case "delProduit":
+    case "del":
         {
             
             ProduitsManager::delete($p);

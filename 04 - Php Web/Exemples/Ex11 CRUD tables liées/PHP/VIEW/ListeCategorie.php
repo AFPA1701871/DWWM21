@@ -20,7 +20,7 @@ $liste = CategoriesManager::getList();
                 <a class=" crudBtn crudBtnModif"
                     href='index.php?codePage=formCategorie&mode=modif&id=<?php echo $elt->getIdCategorie(); ?>'>Modifier</a>
                 <a class=" crudBtn crudBtnSuppr"
-                    href='index.php?codePage=formCategorie&mode=delete&id=<?php echo $elt->getIdCategorie(); ?>'>Supprimer</a></td>
+                    href='index.php?codePage=formCategorie&mode=del&id=<?php echo $elt->getIdCategorie(); ?>'>Supprimer</a></td>
             </tr>
             <?php }?>
 

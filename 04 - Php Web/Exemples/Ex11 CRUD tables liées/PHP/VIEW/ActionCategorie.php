@@ -4,17 +4,17 @@ $erreur =false;
 $p = new Categories($_POST);
 // var_dump($p);
 switch ($_GET['mode']) {
-    case "ajoutCategorie":
+    case "ajout":
         {
             CategoriesManager::add($p);
             break;
         }
-    case "modifCategorie":
+    case "modif":
         {
             CategoriesManager::update($p);
             break;
         }
-    case "delCategorie":
+    case "del":
         {
            $listeProduit= ProduitsManager::getListByCategorie($p->getIdCategorie());
            /**** Technique informative */
