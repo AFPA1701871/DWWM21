@@ -1,0 +1,34 @@
+/****  GENERAL ****/
+html, body {
+	margin : 0;
+	padding : 0;
+}
+
+div, header, footer, nav, article {
+	display : flex;
+	flex : 1;
+	justify-content: center;
+}
+
+img, video {
+	width : 100%;
+}
+.colonne{
+	flex-direction: column;
+}
+
+.titre{
+	flex: 5;
+	font-size : 2em;
+	align-items: center;
+}
+.demi{
+	flex: 0.5;
+}
+.espaceHor{
+	flex: none;
+	height:3vh;
+}
+.itemsCenter{
+	align-items: center;
+}
