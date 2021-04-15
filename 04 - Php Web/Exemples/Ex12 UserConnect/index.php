@@ -46,11 +46,11 @@ $routes = [
     "default" => ["PHP/VIEW/", "Accueil", "Accueil"],
 
     "inscription" => ["PHP/VIEW/", "FormInscription", "Identification"],
-    "actionInscription" => ["PHP/VIEW/", "actionInscription", "xx"],
+    "actionInscription" => ["PHP/VIEW/", "actionInscription", "Erreur détectée"],
     "connection" => ["PHP/VIEW/", "FormConnection", "Identification"],
-    "actionConnection" => ["PHP/VIEW/", "actionConnection", "xx"],
+    "actionConnection" => ["PHP/VIEW/", "actionConnection", "Erreur détectée"],
     "accueil" => ["PHP/VIEW/", "Accueil", "Accueil"],
-    "deconnection" => ["PHP/VIEW/", "Actiondeconnection", "xx"],
+    "deconnection" => ["PHP/VIEW/", "Actiondeconnection", "Erreur détectée"],
     "admin" => ["PHP/VIEW/", "Admin", "Admin"],
     "user" => ["PHP/VIEW/", "User", "User"]
    
