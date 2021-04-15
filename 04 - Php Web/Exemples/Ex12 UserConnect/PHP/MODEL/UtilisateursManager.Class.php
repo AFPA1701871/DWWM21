@@ -65,7 +65,7 @@ class UtilisateursManager
     public static function findByPseudo($pseudo)
     {
 		$db = DbConnect::getDb();
-        if (!in_array(";",str_split( $pseudo))) // s'il n'y a pas de ; , je lance la requete
+        if (strstr($pseudo,";")=== false) // s'il n'y a pas de ; , je lance la requete
         {
             $q = $db->query("SELECT * FROM Utilisateurs WHERE pseudo ='" . $pseudo . "'");
             $results = $q->fetch(PDO::FETCH_ASSOC);
