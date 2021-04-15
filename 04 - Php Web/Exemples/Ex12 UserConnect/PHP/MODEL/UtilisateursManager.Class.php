@@ -80,7 +80,9 @@ class UtilisateursManager
         }
         else
         {
-            return false;
+            // on arrete l'action  
+            die();
+            
         }
     }
 }
