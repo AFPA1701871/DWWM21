@@ -1,0 +1,26 @@
+
+html,
+body,
+div,
+main,
+header {
+    display: flex;
+    flex: 1;
+    justify-content: center;
+}
+
+.colonne {
+    flex-direction: column;
+}
+
+.triple {
+    flex: 3;
+}
+
+.titre {
+    font-size: 1.5em;
+    font-weight: 700;
+}
+img,video{
+    width:100%;
+}

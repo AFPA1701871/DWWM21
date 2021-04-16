@@ -1,0 +1,22 @@
+@media screen and (max-width:1200px)
+{
+    
+    .mini{
+        flex:0.05;
+    }
+    
+}
+@media screen and (max-width:800px)
+{
+    .colonneMedia{
+        flex-direction: column;
+    }
+    .mini{
+        flex:0;
+    }
+    .espaceHorMedia{
+        flex: none;
+        height: 2vh;
+    }
+    
+}
