@@ -4,23 +4,25 @@ class ProduitsManager
     public static function add(Produits $obj)
     {
         $db = DbConnect::getDb();
-        $q = $db->prepare("INSERT INTO Produits (libelleProduit,prix,dateDePeremption,idCategorie) VALUES (:libelleProduit,:prix,:dateDePeremption,:idCategorie)");
+        $q = $db->prepare("INSERT INTO Produits (libelleProduit,prix,dateDePeremption,idCategorie,image) VALUES (:libelleProduit,:prix,:dateDePeremption,:idCategorie,:image)");
         $q->bindValue(":libelleProduit", $obj->getLibelleProduit());
         $q->bindValue(":prix", $obj->getPrix());
         $q->bindValue(":dateDePeremption", $obj->getDateDePeremption());
         $q->bindValue(":idCategorie", $obj->getIdCategorie());
+        $q->bindValue(":image", $obj->getImage());
         $q->execute();
     }
 
     public static function update(Produits $obj)
     {
         $db = DbConnect::getDb();
-        $q = $db->prepare("UPDATE Produits SET libelleProduit=:libelleProduit, prix=:prix, dateDePeremption=:dateDePeremption, idCategorie=:idCategorie WHERE idProduit=:idProduit");
+        $q = $db->prepare("UPDATE Produits SET libelleProduit=:libelleProduit, prix=:prix, dateDePeremption=:dateDePeremption, idCategorie=:idCategorie ,image=:image WHERE idProduit=:idProduit");
         $q->bindValue(":libelleProduit", $obj->getLibelleProduit());
         $q->bindValue(":prix", $obj->getPrix());
         $q->bindValue(":dateDePeremption", $obj->getDateDePeremption());
         $q->bindValue(":idCategorie", $obj->getIdCategorie());
         $q->bindValue(":idProduit", $obj->getIdProduit());
+        $q->bindValue(":image", $obj->getImage());
         $q->execute();
     }
 

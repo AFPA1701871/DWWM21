@@ -24,31 +24,34 @@ function AfficherPage($page)
     $nom = $page[1];
     $titre = $page[2];
     $connexionNecessaire = $page[3];
- /*   if ($connexionNecessaire && !isset($_SESSION['utilisateur']))
+    $roleNecessaire = $page[4];
+    /*   if ($connexionNecessaire && !isset($_SESSION['utilisateur']))
     {
-        include 'PHP/VIEW/404.php';
+    include 'PHP/VIEW/404.php';
     }
     else
     {
-        include 'PHP/VIEW/Head.php';
-        include 'PHP/VIEW/Header.php';
-        include 'PHP/VIEW/Nav.php';
-        include $chemin . $nom . '.php'; //Chargement de la page en fonction du chemin et du nom
-        include 'PHP/VIEW/Footer.php';
+    include 'PHP/VIEW/Head.php';
+    include 'PHP/VIEW/Header.php';
+    include 'PHP/VIEW/Nav.php';
+    include $chemin . $nom . '.php'; //Chargement de la page en fonction du chemin et du nom
+    include 'PHP/VIEW/Footer.php';
     }
-*/
+     */
 
     include 'PHP/VIEW/Head.php';
-        include 'PHP/VIEW/Header.php';
-        include 'PHP/VIEW/Nav.php';
-    if ($connexionNecessaire && !isset($_SESSION['utilisateur']))
+    include 'PHP/VIEW/Header.php';
+    include 'PHP/VIEW/Nav.php';
+    if (($connexionNecessaire && !isset($_SESSION['utilisateur']))
+        //qqn sans connection alors qu'il faut etre connecté
+         ||
+        //qqn avec une connection mais pas le bon role
+        (isset($_SESSION['utilisateur']) && !in_array($_SESSION['utilisateur']->getRole(), $roleNecessaire)))
     {
-        include 'PHP/VIEW/Accueil.php'; 
+        $chemin = "PHP/VIEW/";
+        $nom = "Accueil";
     }
-    else
-    {
-        include $chemin . $nom . '.php'; //Chargement de la page en fonction du chemin et du nom
-    }
+    include $chemin . $nom . '.php'; //Chargement de la page en fonction du chemin et du nom
     include 'PHP/VIEW/Footer.php';
 
 }

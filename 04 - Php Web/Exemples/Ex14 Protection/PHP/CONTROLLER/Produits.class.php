@@ -6,6 +6,7 @@ class Produits
     private $_prix;
     private $_dateDePeremption;
     private $_idCategorie;
+    private $_image;
 
     public function getIdProduit()
     {
@@ -48,6 +49,17 @@ class Produits
     {
         $this->_idCategorie = $idCategorie;
     }
+
+    public function getImage()
+    {
+        return $this->_image;
+    }
+
+    public function setImage($image)
+    {
+        $this->_image = $image;
+    }
+    
     public function __construct(array $options = [])
     {
         if (!empty($options))
@@ -73,4 +85,6 @@ class Produits
     }
 
    
+
+
 }
