@@ -75,7 +75,7 @@ if ($mode!="ajout")
 {
 echo '<div class="ligneDetail"><img alt="'.$prod->getLibelleProduit().'" src="'.$prod->getImage().'"></div>';
 }
-if ($mode=="modif"){
+if ($mode=="modif"|| $mode=="ajout"){
 echo '<div class="ligneDetail">
     <div class="libelleInput">
        Changer d\'image :</div>
