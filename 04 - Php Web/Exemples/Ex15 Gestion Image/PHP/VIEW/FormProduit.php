@@ -4,7 +4,7 @@ echo '<div class="demiPage colonne">';
 echo '<div id="DivSousTitre" >';
 
 //en fonction du mode, on modifie l'entet du form
-echo '<form id="formulaire" method="post" action="index.php?codePage=actionProduit&mode='.$mode.'" >';
+echo '<form id="formulaire" method="post" action="index.php?codePage=actionProduit&mode='.$mode.'" enctype="multipart/form-data">';
 switch ($mode)
 {
     case "ajout":
@@ -69,6 +69,23 @@ $listeCateg = CategoriesManager::getList();
            value="<?=$prod->getDateDePeremption()?> " <?=$disabled?> >
     </div>
 </div>
+
+<?php 
+if ($mode!="ajout") 
+{
+echo '<div class="ligneDetail"><img alt="'.$prod->getLibelleProduit().'" src="'.$prod->getImage().'"></div>';
+}
+if ($mode=="modif"){
+echo '<div class="ligneDetail">
+    <div class="libelleInput">
+       Changer d\'image :</div>
+    <div class="input">
+        <input type="file" name="image"
+            '.$disabled.' >
+    </div>
+</div>'; 
+}
+?>
 <div class="ligneDetail">
     <div class="libelleInput">
         Categorie  :</div>
