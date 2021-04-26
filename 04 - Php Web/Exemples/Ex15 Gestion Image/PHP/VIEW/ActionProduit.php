@@ -27,7 +27,8 @@ switch ($_GET['mode'])
         }
     case "delete":
             {
-
+            $fichier = (ProduitsManager::findById($p->getIdProduit()))->getImage();
+            unlink($fichier);
             ProduitsManager::delete($p);
             break;
         }
@@ -39,8 +40,8 @@ function chargerImage()
 {
     if (is_uploaded_file($_FILES['image']['tmp_name']))
     {
-        $leNom = "IMG/" .uniqid('prod_') . '.' . explode("/", $_FILES['image']['type'])[1];
-        move_uploaded_file($_FILES['image']['tmp_name'],  $leNom);
+        $leNom = "IMG/" . uniqid('prod_') . '.' . explode("/", $_FILES['image']['type'])[1];
+        move_uploaded_file($_FILES['image']['tmp_name'], $leNom);
     }
     return $leNom;
 }

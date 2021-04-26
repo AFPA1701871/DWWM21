@@ -50,7 +50,7 @@ else
 $listeCateg = CategoriesManager::getList();
 
 ?>
-<input type="hidden" name="idProduit"  value="' <?=$prod->getIdProduit()?> ">
+<input type="hidden" name="idProduit"  value=" <?=$prod->getIdProduit()?> ">
 <div class="ligneDetail">
     <div class="libelleInput"> Libelle :</div>
     <div class="input"> <input type="text" name="libelleProduit"
@@ -66,7 +66,7 @@ $listeCateg = CategoriesManager::getList();
         Date de peremption :</div>
     <div class="input">
         <input type="date" name="dateDePeremption"
-           value="<?=$prod->getDateDePeremption()?> " <?=$disabled?> >
+           value="<?= $prod->getDateDePeremption()?>" <?=$disabled?> >
     </div>
 </div>
 
