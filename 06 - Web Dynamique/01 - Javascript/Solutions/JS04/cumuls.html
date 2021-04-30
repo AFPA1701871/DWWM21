@@ -1,0 +1,103 @@
+<HTML>
+<!-- controle de formulaire
+     Caluls entre champs
+     Zone non saisissable
+     erreurs de saisie
+     position du curseur
+-->
+<HEAD>
+<LINK href="style.css" rel="stylesheet" type="text/css"> 
+<SCRIPT LANGUAGE="JavaScript">
+function unNombre() {
+	var charCode = window.event.keyCode;
+	if ((charCode < 48 || charCode > 57)&& charCode != 46) {
+		alert("saisir un nombre!!!");
+		return false;
+	}
+}
+
+function testnb(champ) // test numérique
+{
+var pb=0;
+var lg=champ.value.length;
+for (var i=0;i<lg;i++)
+{
+  car=champ.value.substring(i,i+1);  //1er digit saisi
+  if ((car<"0"||car>"9")&&car!=".")  //si pas un chiffre
+  {
+    pb=1;  //erreur détectée
+  }
+}
+if (pb==1) //si erreur
+{
+  alert("vous avez saisi : "+champ.value);
+  return false;
+}
+else
+{
+  return true;
+}
+}
+
+function CalculeArt(champ1) // calculs des prix
+{
+if (testnb(champ1))
+  {
+  form1.prix1.value=parseFloat(form1.qt1.value)*parseFloat(form1.pu1.value);
+  form1.prix2.value=parseFloat(form1.qt2.value)*parseFloat(form1.pu2.value);
+  form1.total1.value=parseFloat(form1.prix1.value)+parseFloat(form1.prix2.value);
+  varqt1=form1.qt1.value;
+  varqt2=form1.qt2.value;
+  varpu1=form1.pu1.value;
+  varpu2=form1.pu2.value;
+  }
+else
+  {
+  form1.qt1.value=varqt1;
+  form1.qt2.value=varqt2;
+  form1.pu1.value=varpu1;
+  form1.pu2.value=varpu2;
+  }
+}
+
+</SCRIPT>
+</HEAD>
+<BODY class="standard">
+<FORM name="form1">
+   <TABLE class="tab">
+      <TR>
+        <TD>Qté :</TD>
+	<TD><INPUT type="text" name="qt1" Value="1" onkeypress="unNombre()" onBlur="CalculeArt(form1.qt1)"></TD>
+        <TD>Prix unitaire :</TD>
+	<TD><INPUT type="text" name="pu1" Value="0" onkeypress="unNombre()" onBlur="CalculeArt(form1.pu1)"></TD>
+        <TD>Prix :</TD>
+<TD><INPUT type="text" name="prix1" Value="0" onFocus="setTimeout(form1.qt2.select,1)"></TD>
+      </TR>
+      <TR>
+        <TD>Qté :</TD>
+	<TD><INPUT type="text" name="qt2" Value="1" onkeypress="unNombre()" onBlur="CalculeArt(form1.qt2)"></TD>
+        <TD>Prix unitaire :</TD>
+	<TD><INPUT type="text" name="pu2" Value="0" onkeypress="unNombre()" onBlur="CalculeArt(form1.pu2)"></TD>
+        <TD>Prix :</TD>
+	<TD><INPUT type="text" name="prix2" Value="0" onFocus="setTimeout(form1.qt1.select,1)"></TD>
+      </TR>
+	<TR>
+        <TD></TD>
+	<TD></TD>
+        <TD></TD>
+        <TD></TD>
+        <TD></TD>
+	<TD>____________________</TD>
+      </TR>
+      <TR>
+        <TD></TD>
+	<TD></TD>
+        <TD></TD>
+        <TD></TD>
+        <TD></TD>
+	<TD><INPUT type="text" name="total1" onFocus="setTimeout(form1.qt1.select,1)"></TD>
+      </TR>
+ <SCRIPT>document.form1.qt1.select();document.form1.qt1.focus();</SCRIPT>
+ </FORM>
+</BODY>
+</HTML>

@@ -1,0 +1,46 @@
+<HTML>
+<HEAD>
+<META NAME="GENERATOR" Content="Microsoft Visual Studio 6.0">
+<TITLE></TITLE>
+<SCRIPT LANGUAGE=javascript>
+<!--
+var blnposition=0;
+var temp=0;
+var interval="";
+function new_window()
+	{
+		nouvelle_fenetre=open('fenetre_fille.htm', 'new', 'width=250 , height=200, toolbar=no, location=no, directories=no, status=no, menubar=no, scroolbars=no, resizable=no, top=300, left=400');
+	 }
+
+	
+function deplace()
+	{		
+		nouvelle_fenetre.focus();
+		nouvelle_fenetre.moveBy(20,0) ;				
+	}
+function reduit()
+	{		
+		var large = (nouvelle_fenetre.document.body.offsetWidth / 5)*4;
+		var hauteur = (nouvelle_fenetre.document.body.offsetHeight / 5)*4;
+		nouvelle_fenetre.resizeTo(large,hauteur) ;
+		nouvelle_fenetre.focus();
+	}
+	
+	
+//-->
+</SCRIPT>
+
+</HEAD>
+<BODY>
+
+<P><STRONG><font size=4>Cliquez sur l'image pour ouvrir une nouvelle fenetre</font></STRONG>
+<p><IMG onclick=new_window()  src="attent.jpg" >
+<br>
+<br>
+<br>
+<p>Cliquez sur le bouton pour fermer la nouvelle fenetre
+<p><INPUT onclick='nouvelle_fenetre.close()' type="button" value="Fermer la nouvelle fenetre" id=button1 name=button1>
+<p><INPUT type="button" value="Déplacer" onclick=deplace() id=button2 name=button2></p>
+<p><INPUT type="button" value="Reduit" id=button3 name=button3 onclick=reduit()></p>
+</BODY>
+</HTML>

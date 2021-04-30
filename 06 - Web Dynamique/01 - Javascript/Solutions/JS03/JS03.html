@@ -1,0 +1,27 @@
+<HTML>
+<HEAD>
+<META NAME="GENERATOR" Content="Microsoft Visual Studio 6.0">
+<TITLE></TITLE>
+<SCRIPT LANGUAGE=javascript>
+<!--
+etatAmpoule = 0
+function light()
+			{
+			if (etatAmpoule==0)
+			{
+			document.images["ampoule"].src="ampouleOk.gif";
+			 etatAmpoule=1;}
+			else
+			{document.images["ampoule"].src="ampouleHs.gif";
+			 etatAmpoule=0;}
+			}
+//-->
+</SCRIPT>
+</HEAD>
+<BODY>
+<H1 align="center"><BIG><BIG> AMPOULE MAGIQUE</BIG></BIG><H1>
+
+<P align=center><A href="#" onClick="light()">
+<IMG SRC="ampouleHS.gif" name="ampoule" width=100 height=150 border=0></A>Cliquer sur l'ampoule pour l'allumer ou l'éteindre
+</BODY>
+</HTML>

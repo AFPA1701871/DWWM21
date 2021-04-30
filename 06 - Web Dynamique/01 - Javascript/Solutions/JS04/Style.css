@@ -1,0 +1,15 @@
+TABLE.tab
+{
+    BORDER-RIGHT: solid;
+    BORDER-TOP: solid;
+    MARGIN-TOP: 12px;
+    MARGIN-BOTTOM: 12px;
+    BORDER-LEFT: solid;
+    MARGIN-RIGHT: 12px;
+    BORDER-BOTTOM: solid;
+    BACKGROUND-COLOR: darkseagreen
+}
+BODY.standard
+{
+    BACKGROUND:  #d7d5ff 
+}

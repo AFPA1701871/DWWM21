@@ -1,0 +1,35 @@
+<HTML>
+<HEAD>
+<META NAME="GENERATOR" Content="Microsoft Visual Studio 6.0">
+<TITLE></TITLE>
+<SCRIPT LANGUAGE=javascript>
+<!--
+function afficheDate() {
+		var dt=new Date;
+		var txtDate;
+		txtDate=((dt.getDate()<10)?"0":"")  +   dt.getDate() + "/" + 
+		        ((dt.getMonth()<10)?"0":"") +  (dt.getMonth()+1)  + "/" + 
+		          dt.getFullYear();
+		return txtDate
+		}
+function afficheHeure() {
+		var dt=new Date;
+		var txtHeure;
+		txtHeure = ((dt.getHours()<10)?"0":"")   +  dt.getHours() + ":" + 
+				   ((dt.getMinutes()<10)?"0":"") +  dt.getMinutes() + ":" + 
+				   ((dt.getSeconds()<10)?"0":"") +  dt.getSeconds();
+		return txtHeure;
+		}
+//-->
+</SCRIPT>
+
+</HEAD>
+<BODY>
+<FORM name="form1">
+<INPUT type="text" name="txtDate" size=12 Value="">
+<INPUT type="button" name="bouton" Value="Date" onClick="txtDate.value=afficheDate()"><BR>
+<INPUT type="text" name="txtHeure" size=10 Value="">
+<INPUT type="button" name="bouton" Value="Heure" onClick="txtHeure.value=afficheHeure()">
+
+</BODY>
+</HTML>
