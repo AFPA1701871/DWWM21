@@ -24,3 +24,4 @@ function QuelNavigateur() {
     }
     return navig;
 }
+QuelNavigateur();

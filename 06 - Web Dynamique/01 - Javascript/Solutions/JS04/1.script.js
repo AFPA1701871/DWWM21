@@ -14,11 +14,11 @@ var pTot=document.getElementById("pTot");
 var lesInputs = document.getElementsByTagName("input");
 for(let i=0;i<lesInputs.length;i++)
 {
-    lesInputs[i].addEventListener("change",calcul);
+    lesInputs[i].addEventListener("input",calcul);
 }
 
 function calcul(){
-    p1.value = q1.value* pu1.value;
-    p2.value = q2.value* pu2.value;
+    p1.value = q1.value * pu1.value;
+    p2.value = q2.value * pu2.value;
     pTot.value = parseInt(p1.value) + parseInt(p2.value);
 }
