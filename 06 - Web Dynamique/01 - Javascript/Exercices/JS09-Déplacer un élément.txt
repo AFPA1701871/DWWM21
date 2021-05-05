@@ -5,4 +5,5 @@ Ecrire le javascript qui permet de déplacer le carré à l'aide de
 3. la souris
 4. ajouter un obstacle
 5. ajouter des obstacles
+6. faire un labyrinthe
 
