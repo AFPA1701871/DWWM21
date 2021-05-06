@@ -59,13 +59,13 @@ function deplaceSouris(e)
     carre.style.left = parseInt(e.clientX) + ecartX + "px";
 };
 
-var ecartY, ecartX;	// repère le décalage entre le coin suprieur du carré et la souris
+var ecartY, ecartX;	// repère le décalage entre le coin supérieur du carré et la souris
 var carre = document.getElementById('carre');
 var flagMouv = false;
 
 carre.addEventListener("mousedown", (e)=>
 {
-	// on repere l'ecart entre la souris et le haut du carré, pourgarder cet ecart pendant le déplacement
+	// on repere l'ecart entre la souris et le haut du carré, pour garder cet ecart pendant le déplacement
     ecartY = parseInt(window.getComputedStyle(carre).top) - parseInt(e.clientY);
     ecartX = parseInt(window.getComputedStyle(carre).left) - parseInt(e.clientX);
 	// on autorise le déplacement

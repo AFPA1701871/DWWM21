@@ -24,7 +24,18 @@ function deplace(dx, dy) {
         document.getElementById('carre').style.left = l + dx + 'px';
     }
 }
-
+/**
+ * Détermine s'il y a collision
+ * @param {*} tob top obstacle
+ * @param {*} lob left  obstacle
+ * @param {*} wob width obstacle
+ * @param {*} hob height  obstacle
+ * @param {*} t top carre
+ * @param {*} l left carre
+ * @param {*} w width carre
+ * @param {*} h heigth carre
+ * @returns 
+ */
 function depl_ok(tob, lob, wob, hob, t, l, w, h) {
     if (l < lob + wob && l + w > lob && t < tob + hob && t + h > tob) {
         return false
@@ -85,8 +96,7 @@ window.addEventListener("keydown", function (event) {
 
 function deplaceSouris(e) {
     if (!collisionObstacles(parseInt(e.clientY) + ecartY, parseInt(e.clientX) + ecartX)) {
-        // if (!collisionObstacles(parseInt(e.clientY) + ecartY, parseInt(e.clientX) + ecartX)) {
-        // on deplace le carré en fonction de la position de la souris et de l'ecart du départ
+       // on deplace le carré en fonction de la position de la souris et de l'ecart du départ
         carre.style.top = parseInt(e.clientY) + ecartY + "px";
         carre.style.left = parseInt(e.clientX) + ecartX + "px";
     }
