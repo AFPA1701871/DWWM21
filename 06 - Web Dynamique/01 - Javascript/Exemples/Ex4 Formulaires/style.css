@@ -1,0 +1,17 @@
+body,form,div,html{
+    display: flex;
+    flex: 1;
+    justify-content:center;
+}
+.colonne{
+    flex-direction: column;
+}
+.demi{
+    flex: 0.5;
+}
+.mini{
+    flex: 0.2;
+}
+#erreur{
+    color:red;
+}
