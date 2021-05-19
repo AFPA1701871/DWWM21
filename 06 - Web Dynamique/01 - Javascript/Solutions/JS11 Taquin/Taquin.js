@@ -12,8 +12,8 @@ function deplace(e) {
     var boutonVide = document.getElementById(idVide);
     //on regarde si la case cliquée est éloignée de 1 par rapport à la case vide (on exclu la diagonnale)
     // Math.abs donne la valeur absolue, c'est à dire la valeur sans signe
-    // ^correspond au XOR
-    if (Math.abs(elig - lig) == 1 ^ Math.abs(ecol - col) == 1) {
+    // la somme des deplacements doit etre egale à 1
+    if (Math.abs(elig - lig) + Math.abs(ecol - col) == 1) {
         /* mise à jour du nombre de clics */
         nbclicks = nbclicks + 1;
         /* on récupère l'élément compteur */
