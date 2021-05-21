@@ -1,0 +1,135 @@
+<!DOCTYPE HTML>
+<HTML>
+<head>
+    <meta charset="UTF-8" />
+    <title>structureSite</title>
+    <link rel="stylesheet" href="../CSS/regexFormulaire.css" />
+    <link rel="stylesheet" media="screen and (max-width: 1300px)" href="../CSS/regexFormulaire.css" />
+</head>
+<!--  Attributs utilisés
+    required : oblige le champ à contenir quelque chose à la validation (obligatoire)
+    autofocus : le pointeur sera dans ce champ au demarrage de la page
+    pattern : permet de vérifier la syntaxe à la validation
+    title : infobulle
+    oncontextmenu : evenement declenché sur le clic droit de la souris
+    placeholder : information dans le champ qui s'efface à la réception du focus
+    checked : la case est cochée au démarrage
+    textarea : zone texte sur plusieurs lignes
+
+
+    REGEX :
+    caractère accent autorisé                   "[A-Za-zâäàéèùêëîïôöçñ]{2,}"    
+    5 numerique                                 "^[0-9]{5,5}$"                  
+    numero telephone francais 0 ou +33 ou 0033  "(0|\\+33|0033)[1-9][0-9]{8}"   
+
+    mot de passe        "(?=.*\d)(?=.*[@ç_-])(?=.*[a-z])(?=.*[A-Z])[0-9a-zA-Z@ç_]{8,30}"  
+                        (?=.*\d) il doit y avoir au moins un numerique
+                        ?=.* n'est pas intégré au résultat
+                        (?=.*[@ç_-]) au moins un caractere special
+            [0-9a-zA-Z@ç_]{8,30} oblige le mot de passe à avoir entre 8 et 30 caracteres et que les caractères soient dans la liste
+    adresse mail        "^[a-z]+[a-z0-9._-]+@[a-z0-9._-]+\.[a-z]{2,6}$"
+
+-->
+<body>
+    <div id="header">
+        <h1>Formulaire d'inscription</h1>
+    </div>
+    <form action="" method="POST">
+        <div id="ligne1">
+            <label id="genres" for="genre">Genre : </label>
+            
+            <div id="allRadio">
+                <div class="inputLabel">
+                    <input type="radio" id="genreF" name="genre" required checked>
+                    <label class ="genre" for="dame">Mme</label>
+                </div>
+                <div class="inputLabel">
+                    <input type="radio" id="genreMl" name="genre" required>
+                    <label class ="genre" for="demoiselle">Mlle</label>
+                </div>
+                <div class="inputLabel">
+                    <input type="radio" id="genreH" name="genre" required>
+                    <label class ="genre" for="hommes">Mr</label>
+                </div>
+            </div>
+            <span class="message"></span>
+        </div>
+        <div class="ligne">
+            <label for="nom">Nom : </label>
+            <input type="text" class="input" id="nom" name="nom" required autofocus pattern="[A-Za-zâäàéèùêëîïôöçñ]{2,}">
+            <div class="interrogation" title="veuillez saisir votre nom"><img src="../Images/interrogation.png" /></div>
+            <div class="boutonVert"><img src="../Images/V.png" /></div>
+            <div class="boutonRouge"><img src="../Images/X.png" /></div>
+            <span class="message"></span>
+        </div>
+        <div class="ligne">
+            <label for="ddn">Date de naissance : </label>
+            <input type="date" class="input" id="date" name="ddn"  required>
+            <div class="interrogation" title="saisissez votre date de naissance"><img src="../Images/interrogation.png" /></div>
+            <div class="boutonVert"><img src="../Images/V.png" /></div>
+            <div class="boutonRouge"><img src="../Images/X.png" /></div>
+            <span class="message"></span>
+        </div>
+        <div class="ligne">
+            <label for="postal">Code postal : </label>
+            <input type="text" class="input" id="postal" name="postal"  required pattern="^[0-9]{5,5}$">
+            <div class="interrogation" title="saisissez votre code postal"><img src="../Images/interrogation.png" /></div>
+            <div class="boutonVert"><img src="../Images/V.png" /></div>
+            <div class="boutonRouge"><img src="../Images/X.png" /></div>
+            <span class="message"></span>
+        </div>
+        <div class="ligne">
+            <label for="numero">Numéro de téléphone : </label>
+            <input type="text" class="input" id="numero" name="numero"  required pattern="(0|\\+33|0033)[1-9][0-9]{8}">
+            <div class="interrogation" title="saisissez votre numéro de téléphone"><img src="../Images/interrogation.png " /></div>
+            <div class="boutonVert"><img src="../Images/V.png " /></div>
+            <div class="boutonRouge"><img src="../Images/X.png " /></div>
+            <span class="message"></span>
+        </div>
+        <div class="ligne">
+            <label for="motDePasse">Mot de passe : </label>
+            <input type="password" class="input" id="motDePasse" name="motDePasse"  required oncontextmenu="return false;" pattern="(?=.*\d)(?=.*[#$^+=!*()@%&])(?=.*[a-z])(?=.*[A-Z])[0-9a-zA-Z#$^+=!*()@%&]{8,30}"><!--"(?=.[a-z])(?=.[A-Z])(?=.\d)(?=.[#$^+=!*()@%&]).{8,30}">-->
+            <div id="oeil"><img src="../Images/oeil.png" /></div>
+            <div class="interrogation" title="saisissez votre mot de passe"><img src="../Images/interrogation.png" /></div>
+            <div class="boutonVert"><img src="../Images/V.png" /></div>
+            <div class="boutonRouge"><img src="../Images/X.png" /></div>
+            <span class="message"></span>
+        </div>
+        <div class="ligne">
+            <label for="confirm">Confirmer mot de passe : </label>
+            <input type="password" class="input" id="confirm" name="confirm"  required>
+            <div class="interrogation" title="confirmez votre mot de passe, copier-coller impossible"><img src="../Images/interrogation.png" /></div>
+            <div class="boutonVert"><img src="../Images/V.png" /></div>
+            <div class="boutonRouge"><img src="../Images/X.png" /></div>
+            <span class="message"></span>
+        </div>
+        <div class="ligne">
+            <label for="mail">Adresse mail : </label>
+            <input type="email" class="input" id="email" name="mail"  required pattern="^[a-z]+[a-z0-9._-]+@[a-z0-9._-]+\.[a-z]{2,6}$">
+            <div class="interrogation" title="saisissez votre adresse mail"><img src="../Images/interrogation.png" /></div>
+            <div class="boutonVert"><img src="../Images/V.png" /></div>
+            <div class="boutonRouge"><img src="../Images/X.png" /></div>
+            <span class="message"></span>
+        </div>
+        <div class="ligne">
+            <label for="comment">Commentaire : </label>
+            <textarea id="comment" name="comment" rows="3" cols="28" placeholder="Facultatif"></textarea>
+            <div class="interrogation" title="laissez un commentaire si vous avez envie"><img src="../Images/interrogation.png" /></div>
+            <div class="boutonVert"><img src="../Images/V.png" /></div>
+            <div class="boutonRouge"><img src="../Images/X.png" /></div>
+            <span class="message"></span>
+        </div>
+        <div class="ligne derniereLigne">
+            <input type="checkbox" id="condition" name="condition" checked>
+            <label class="checkbox" for="condition">J'accepte les conditions générales</label>
+        </div>
+        <div class="bouton ">
+            <button id="submit" type="submit ">Valider</button>
+            <button type="submit">Annuler</button>
+        </div>
+    </form>
+
+    <script src="../JS/regexFormulaire.js "></script>
+</body>
+
+</html>
