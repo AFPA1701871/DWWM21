@@ -51,11 +51,13 @@ function verif(event) {
         imgRouge.style.visibility = 'hidden';
         imgVerte.style.visibility = 'hidden';
         message.innerHTML = "champ manquant";
+        tabErreur[monInput.name]=1;
     } else if (!monInput.checkValidity()) {
         // force le test du pattern sur l'input
         imgRouge.style.visibility = 'visible';
         imgVerte.style.visibility = 'hidden';
         message.innerHTML = "Format incorrect";
+        tabErreur[monInput.name]=1;
     } else //if (monInput.checkValidity())
     {
         imgVerte.style.visibility = 'visible';
