@@ -1,0 +1,97 @@
+/*global*/
+:root {
+  --fond: #808080;
+  --clair: #fcd5d5;
+  --border: #272525;
+
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  display: flex;
+}
+
+
+div,
+form,
+header {
+  display: flex;
+  flex: 1;
+}
+
+.mini {
+  flex: 0.3;
+}
+
+.colonne,
+form {
+  flex-direction: column;
+}
+
+.centre {
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+.espaceHor{
+  flex:none;
+  height: 5vh;
+}
+/*formulaire*/
+input {
+  width: 100%;
+  height: 100%;
+  border: none;
+  outline: none;
+  background: transparent;
+  cursor: default;
+}
+
+label {
+  width: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  pointer-events: none;
+  transition: 0.5s;
+}
+
+.form-box {
+  padding: 1em;
+  background: var(--fond);
+  color: var(--clair);
+  border: 1px solid var(--border);
+}
+
+.icone {
+  flex: 0.06;
+  margin: 0 0.4em;
+}
+
+.conteneur-box {
+  margin: 0.6em;
+  padding: 0.3em;
+  border: 1px solid var(--border);
+}
+
+.input-box {
+  position: relative;
+  font-size: 1.1em;
+}
+
+input:focus+label,
+input:valid+label {
+  top: -1.2em;
+  left: -1.3em;
+  color: var(--clair);
+  font-size: 0.9em;
+  background-color: var(--fond);
+  width: auto;
+}
+
+@media screen and (max-width: 600px) {
+  .form-box {
+    font-size: 0.7em;
+  }
+}
