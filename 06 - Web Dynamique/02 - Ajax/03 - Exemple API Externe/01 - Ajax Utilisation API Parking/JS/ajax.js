@@ -16,7 +16,6 @@ req.onreadystatechange = function (event) {
             //on décode la réponse, pour obtenir un objet
             reponse = JSON.parse(this.responseText);
             console.log(this.responseText);
-            console.log(reponse);
             enregs = reponse.records;
             for (let i = 0; i < enregs.length; i++) {
                 // on crée la ligne et les div internes
