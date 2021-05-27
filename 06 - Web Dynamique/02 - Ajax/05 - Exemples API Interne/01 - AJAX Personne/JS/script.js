@@ -1,5 +1,5 @@
 const requ = new XMLHttpRequest();
-requ.open('GET', 'PHP/Model/API/Count.php', true);
+requ.open('GET', 'PHP/Model/API/ListeAPI.php', true);
 requ.send(null);
 
 requ.onreadystatechange = function(event) {

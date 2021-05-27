@@ -34,13 +34,14 @@ class PersonneManager
 		return new Personne($donnees);
 	}
 
-	static public function getList()
+	static public function getList($api)
 	{
 		$db = DbConnect::getDb(); // Instance de PDO.
 		// Retourne la liste de tous les personnes.
 		$q = $db->query('SELECT id, nom, prenom, codePostal, adresse, ville FROM personnes ORDER BY nom');
 		while ($donnees = $q->fetch(PDO::FETCH_ASSOC)) {
-			$persos[] = new Personne($donnees);
+			if($api) $persos[] = $donnees;
+			else $persos[] = new Personne($donnees);
 		}
 		return $persos;
 	}

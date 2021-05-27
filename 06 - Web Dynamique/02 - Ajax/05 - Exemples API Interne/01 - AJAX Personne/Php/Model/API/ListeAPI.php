@@ -6,4 +6,4 @@ include "../../Controller/Personne.Class.php";
 include "../DbConnect.class.php";
 Parametre::init();
 DbConnect::init();
-echo json_encode(PersonneManager::getListAPI());
+echo json_encode(PersonneManager::getList(true));
