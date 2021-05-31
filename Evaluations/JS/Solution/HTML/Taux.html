@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <title>Calcul mensualité</title>
+    <link href="../CSS/Taux.css" rel="stylesheet">
+
+</head>
+
+<body>
+    <div class="contenu">
+        <div class="centrer"><h1>Calcul du Taux d'intérêt</h1></div>
+        <fieldset>
+            <div class="ligne">
+                <div class="label"> Capital Emprunté</div>
+                <div> <input id="cap" type="number" pattern="^[0-9]*$" required></div>
+                <div class="unite"> €</div>
+                <div class="message"></div>
+               
+            </div>
+            <div class="ligne">
+                <div class="label"> Taux Nominal Annuel</div>
+                <div><input id="taux" type="number" min="0.00" max="100.00" step="0.01" pattern="^[0-9]{1,2}[.,]?[0-9]*$" required></div>
+                <div class="unite"> %</div>
+                <div class="message"></div>
+            </div>
+            <div class="ligne">
+                <div class="label"> Durée d'emprunt</div>
+                <div> <input id="duree" type="number" min="0.00" max="100.00" step="0.5" pattern="^[0-9]{1,2}$" required></div>
+                <div class="unite"> Ans</div>
+                <div class="message"></div>
+            </div>
+        </fieldset>
+        <fieldset>
+            <div class="ligne">
+                <div class="label"> Mensualité</div>
+                <div> <input id="mens" disabled></div>
+                <div class="unite"> €</div>
+                <div class="message"></div>
+            </div>
+            <div class="ligne">
+                <div class="label"> Coût Total</div>
+                <div> <input id = "cout" disabled></div>
+                <div class="unite"> €</div>
+                <div class="message"></div>
+            </div>
+        </fieldset>
+        <div class="ligne ">
+            <div></div>
+            <button id="calcul" disabled>Calculer</button>
+            <div></div>
+            <button id="reset">Nouveau Calcul</button>
+            <div></div>
+        </div>
+    </div>
+    <script src="../JS/Taux.js"></script>
+</body>
+
+</html>

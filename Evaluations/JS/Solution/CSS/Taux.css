@@ -1,0 +1,52 @@
+body {
+    background-color: wheat;
+    display: flex;
+    justify-content: center;
+    min-width:600px;
+    overflow: auto;
+}
+
+.contenu {
+    margin: 8vw 20vw;
+}
+
+div {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+    justify-content: center;
+}
+
+.centrer {
+    text-align: center;
+}
+
+.ligne {
+    flex-direction: row;
+    margin: 1vw 0;
+}
+
+.label {
+    flex: 0.6;
+}
+
+.unite {
+    flex: 0.3;
+    margin: 0 1vw;
+}
+
+.message {
+    flex: 0.5;
+    color: red;
+    font-weight: bold;
+}
+
+fieldset {
+    margin: 2vw 0;
+}
+
+@media (max-width: 1200px) {
+    .contenu{
+        margin: unset;
+    }
+}
