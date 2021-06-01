@@ -9,7 +9,7 @@ function createCookie(name,value,days) {
 	}
     else var expires = "";
     //le cookie doit contenir  clé=valeur;expires=temps;path=nomDomaine
-	document.cookie = name+"="+value+"; " + expires+"; path=/";
+	document.cookie = name+"="+value+";" + expires+"; path=/";
 }
 
 function readCookie(name) {
