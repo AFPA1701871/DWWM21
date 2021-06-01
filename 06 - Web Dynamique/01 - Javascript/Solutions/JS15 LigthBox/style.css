@@ -1,0 +1,47 @@
+body,
+div {
+    display: flex;
+    margin: 0;
+    padding: 0;
+    flex: 1;
+}
+
+#lightbox {
+    /*fond noir avec opacité à 0.5 */
+    background-color: rgba(0, 0, 0, 0.5);  
+    /* pour occuper tout l'espace */
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    position: absolute;
+    /* masquer tant que inutile*/
+    display: none;
+}
+
+.grand {
+    flex: 5;
+}
+
+img {
+    cursor: pointer;
+    width: 100%;
+    margin: auto;
+}
+
+.sombre {
+    background-color: rgb(48, 48, 48);
+}
+
+.clair {
+    background-color: white;
+}
+
+.colonne {
+    flex-direction: column;
+}
+
+.espaceHor {
+    flex: none;
+    height: 4vh;
+}
