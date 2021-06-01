@@ -13,7 +13,7 @@ function createCookie(name, value, days) {
 function readCookie(name) {
     // on récupère tous les cookies du site en une fois, séparé par ;  
     //on enlève les espaces
-    var listeCookies = document.cookie.replace(" ", "");
+    var listeCookies = document.cookie.replaceAll(" ", "");
     // on range dans un tableau chaque cookie
     var listeCookies = document.cookie.split(';');
     for (let i = 0; i < listeCookies.length; i++) {
