@@ -6,7 +6,7 @@ class MenusManager
 	public static function addMenu($lib)
 	{
  		$db=DbConnect::getDb();
-		 var_dump("INSERT INTO Menus (libelleMenu) VALUES ('".$lib."')");
+		// var_dump("INSERT INTO Menus (libelleMenu) VALUES ('".$lib."')");
 		$q=$db->exec("INSERT INTO Menus (libelleMenu) VALUES ('".$lib."')");
 		
 	}

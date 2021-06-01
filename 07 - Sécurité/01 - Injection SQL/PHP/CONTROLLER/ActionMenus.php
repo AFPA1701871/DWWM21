@@ -8,7 +8,7 @@ switch ($mode) {
         {
             // sans protection, on appelle la fonction addMenu
             MenusManager::addMenu($_POST['libelleMenu']);
-            //MenusManager::add($obj);
+            // MenusManager::add($obj);
             break;
         }
     case "modifier":
