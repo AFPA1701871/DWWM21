@@ -16,7 +16,9 @@
     {
         echo '<div class="resultat"> Le résultat de votre recherche pour : '.$_POST["nom"].'</div>';
       // pour pallier, utiliser htmlspecialchars
-      //  echo '<div class="resultat"> Le résultat de votre recherche pour : '.htmlspecialchars($_POST["nom"]).'</div>';
+      /* var_dump(htmlspecialchars($_POST["nom"]));
+        echo '<div class="resultat"> Le résultat de votre recherche pour : '.htmlspecialchars($_POST["nom"]).'</div>';
+        */
     }
     // ecrire le php classique de recherche
     ?>
