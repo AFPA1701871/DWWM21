@@ -1,0 +1,38 @@
+/*global*/
+:root {
+    --fond: #808080;
+    --clair: #fcd5d5;
+    --border: #272525;
+
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    display: flex;
+}
+
+div,
+form,
+header,body,main {
+    display: flex;
+    flex: 1;
+    justify-content: center;
+}
+
+.mini {flex: 0.3;}
+
+.colonne,main {
+    flex-direction: column;
+}
+
+.centre {
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+.espaceHor {
+    flex: none;
+    height: 5vh;
+}
