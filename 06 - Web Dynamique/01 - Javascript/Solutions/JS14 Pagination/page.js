@@ -4,7 +4,7 @@ liste = document.getElementById("liste").value.split(',');
 
 
 positionDebut = 0;        // début de la liste à afficher
-nombreOccurence = 5;     // nombre d'élément par page
+nombreOccurence = 3;     // nombre d'élément par page
 pageActuelle = 1;       // page actuellement affichée
 maxPages = Math.ceil(liste.length / nombreOccurence);  // nombre maximal de pages
 
@@ -31,7 +31,7 @@ function affichePage() {
     numPage();
 }
 function nextPage() {
-    if (positionDebut + nombreOccurence <= liste.length) {
+    if (positionDebut + nombreOccurence < liste.length) {
         positionDebut += nombreOccurence;
         pageActuelle++;
         affichePage();
