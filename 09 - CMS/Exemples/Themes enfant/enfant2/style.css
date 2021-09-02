@@ -1,0 +1,15 @@
+/* 
+Theme Name: enfant2 
+Template: hestia 
+*/
+.card-title a
+{
+    color:red !important;
+    background-color: #000;
+}
+
+.test{
+    height: 20vh;
+    display: flex;
+    align-items: flex-end;
+}
