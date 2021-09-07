@@ -1,0 +1,17 @@
+
+.line {
+    display: flex !important;
+}
+
+.day, .morning, .afternoon {
+    padding: 1vh;
+}
+
+.day {
+    font-weight: bold;
+    flex: 1;
+}
+
+.morning, .afternoon {
+    flex: 2;
+}
